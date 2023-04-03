@@ -1,5 +1,3 @@
-// Print "Hello World!" message
-
 package main
 import "fmt"
 
