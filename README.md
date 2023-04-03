@@ -1,5 +1,5 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
-[![Go Report Card](https://goreportcard.com/badge/github.com/yourusername/your-repo)](https://goreportcard.com/report/github.com/yourusername/your-repo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/yourusername/your-repo)](https://goreportcard.com/report/github.com/Eggy115/Go)
 
 # Go Scripts
 This repository contains a collection of scripts written in Go under the GPL v3 license. These scripts are intended to provide useful functionality for a wide variety of use cases.
