@@ -1,3 +1,6 @@
+package main
+import "fmt"
+
 type Shape interface {
     Area() float64
 }
