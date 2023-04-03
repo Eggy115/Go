@@ -1,7 +1,12 @@
-[![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
-[![Go Report Card](https://goreportcard.com/badge/github.com/Eggy115/Go)](https://goreportcard.com/report/github.com/Eggy115/Go)
-
 # Go
+
+<p align="center">
+  <a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPLv3 License"></a>
+  <a href="https://goreportcard.com/report/github.com/Eggy115/Go"><img src="https://goreportcard.com/badge/github.com/Eggy115/Go" alt="Go Report Card"></a>
+  <a href="https://github.com/Eggy115/Go/actions/workflows/ci.yml"><img src="https://github.com/Eggy115/Go/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
+  <a href="https://codecov.io/gh/Eggy115/Go"><img src="https://codecov.io/gh/Eggy115/Go/branch/main/graph/badge.svg" alt="Code Coverage"></a>
+</p>
+
 This repository contains a collection of scripts written in Go under the GPL v3 license. These scripts are intended to provide useful functionality for a wide variety of use cases.
 
 ## Table of Contents
