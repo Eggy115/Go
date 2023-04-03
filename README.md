@@ -43,8 +43,8 @@ Each script in the repository has its own usage instructions. To view the usage 
 
 ## License
 
-All scripts in this repository are licensed under the GNU General Public License v3.0. For more information, see the `LICENSE` file.
+All scripts in this repository are licensed under the GNU General Public License v3.0. For more information, see the [LICENSE](./LICENSE) file.
 
 ## Contributing
 
-Contributions are welcome! To contribute, please fork the repository and submit a pull request. Make sure to adhere to the Go code style guidelines and include unit tests for any new functionality.
+Contributions are welcome! To contribute, please fork the repository and submit a pull request. Make sure to adhere to the Go code style guidelines and include unit tests for any new functionality. See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
