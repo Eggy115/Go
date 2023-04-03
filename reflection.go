@@ -1,3 +1,6 @@
+package main
+import "fmt"
+
 type Person struct {
     Name string
     Age  int
