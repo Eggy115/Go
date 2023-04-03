@@ -1,3 +1,6 @@
+package main
+import "fmt"
+
 func compute() (result int, err error) {
     defer func() {
         if r := recover(); r != nil {
