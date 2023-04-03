@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPLv3 License"></a>
   <a><img alt="Goreport" src="https://img.shields.io/badge/go report-A+-brightgreen.svg"></a>
-  <a><img alt="Gover" src="https://img.shields.io/github/go-mod/go-version/Eggy115/go"></a>  
+  <a><img alt="Gover" src="https://img.shields.io/badge/Go-v1.18-blue.svg"></a>
   <a href="https://github.com/Eggy115/Go/issues"><img src="https://img.shields.io/github/issues/Eggy115/Go" alt="GitHub Issues"></a>
   <a href="https://github.com/Eggy115/Go/stargazers"><img src="https://img.shields.io/github/stars/Eggy115/Go" alt="GitHub Stars"></a>  
 </p>
