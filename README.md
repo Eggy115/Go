@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPLv3 License"></a>
-  <a href="https://goreportcard.com/report/github.com/Eggy115/fGo"><img src="https://goreportcard.com/badge/github.com/Eggy115/Go" alt="Go Report Card"></a>
+  <a href="https://goreportcard.com/report/github.com/Eggy115/Go"><img src="https://goreportcard.com/badge/github.com/Eggy115/Gog" alt="Go Report Card"></a>
   <a href="https://github.com/Eggy115/Go/issues"><img src="https://img.shields.io/github/issues/Eggy115/Go" alt="GitHub Issues"></a>
   <a href="https://github.com/Eggy115/Go/stargazers"><img src="https://img.shields.io/github/stars/Eggy115/Go" alt="GitHub Stars"></a>  
 </p>
