@@ -1,3 +1,7 @@
+package main
+import "fmt"
+import "time"
+
 func worker(id int, jobs <-chan int, results chan<- int) {
     for j := range jobs {
         fmt.Printf("Worker %d processing job %d\n", id, j)
