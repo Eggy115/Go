@@ -1,68 +1,53 @@
-package compiler
+package pcre
+
+/*
+#cgo LDFLAGS: -lpcre
+#include <pcre.h>
+*/
+import "C"
 
 import (
 	"fmt"
-
-	"github.com/github/linguist/tools/grammars/pcre"
+	"strings"
+	"unsafe"
 )
 
-type replacement struct {
-	pos int
-	len int
-	val string
+func RegexPP(re string) string {
+	if len(re) > 32 {
+		re = fmt.Sprintf("\"`%s`...\"", re[:32])
+	} else {
+		re = fmt.Sprintf("\"`%s`\"", re)
+	}
+	return strings.Replace(re, "\n", "", -1)
 }
 
-func fixRegex(re string) (string, bool) {
-	var (
-		replace     []replacement
-		escape      = false
-		hasBackRefs = false
-	)
-
-	for i, ch := range re {
-		if escape {
-			if ch == 'h' {
-				replace = append(replace, replacement{i - 1, 2, "[[:xdigit:]]"})
-			}
-			if '0' <= ch && ch <= '9' {
-				hasBackRefs = true
-			}
-		}
-		escape = !escape && ch == '\\'
-	}
-
-	if len(replace) > 0 {
-		reb := []byte(re)
-		offset := 0
-		for _, repl := range replace {
-			reb = append(
-				reb[:offset+repl.pos],
-				append([]byte(repl.val), reb[offset+repl.pos+repl.len:]...)...)
-			offset += len(repl.val) - repl.len
-		}
-		return string(reb), hasBackRefs
-	}
-
-	return re, hasBackRefs
+type CompileError struct {
+	Pattern string
+	Message string
+	Offset  int
 }
 
-func CheckPCRE(re string) (string, error) {
-	hasBackRefs := false
+func (e *CompileError) Error() string {
+	return fmt.Sprintf("regex %s: %s (at offset %d)",
+		RegexPP(e.Pattern), e.Message, e.Offset)
+}
 
-	if re == "" {
-		return "", nil
-	}
-	if len(re) > 32*1024 {
-		return "", fmt.Errorf(
-			"regex %s: definition too long (%d bytes)",
-			pcre.RegexPP(re), len(re))
-	}
+const DefaultFlags = int(C.PCRE_DUPNAMES | C.PCRE_UTF8 | C.PCRE_NEWLINE_ANYCRLF)
 
-	re, hasBackRefs = fixRegex(re)
-	if !hasBackRefs {
-		if err := pcre.CheckRegexp(re, pcre.DefaultFlags); err != nil {
-			return "", err
+func CheckRegexp(pattern string, flags int) error {
+	pattern1 := C.CString(pattern)
+	defer C.free(unsafe.Pointer(pattern1))
+
+	var errptr *C.char
+	var erroffset C.int
+	ptr := C.pcre_compile(pattern1, C.int(flags), &errptr, &erroffset, nil)
+	if ptr == nil {
+		return &CompileError{
+			Pattern: pattern,
+			Message: C.GoString(errptr),
+			Offset:  int(erroffset),
 		}
 	}
-	return re, nil
+	C.free(unsafe.Pointer(ptr))
+	return nil
 }
